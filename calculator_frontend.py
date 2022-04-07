@@ -94,33 +94,33 @@ def calc():
     # Datos personaje 1 -------------------------------------------
     # Ataque pj1 --------------------------------------------------
     label_ha_1 = Label(topCalc, text='HA', bg="#3290F1").place(x=252, y=40)
-    entry_ha_1 = Entry(topCalc, textvariable=ha_1).place(x=250, y=55, width=60, height=30)
+    entry_ha_1 = Entry(topCalc, textvariable=ha_1, bg="#f2f2f2").place(x=250, y=55, width=60, height=30)
 
     label_bonus_ha_1 = Label(topCalc, text='Bono', bg="#3290F1").place(x=322, y=40)
-    entry_bonus_ha_1 = Entry(topCalc, textvariable=bonus_ha_1).place(x=320, y=55, width=60, height=30)
+    entry_bonus_ha_1 = Entry(topCalc, textvariable=bonus_ha_1, bg="#f2f2f2").place(x=320, y=55, width=60, height=30)
 
     label_penalizer_ha_1 = Label(topCalc, text='Penaliz.', bg="#3290F1").place(x=392, y=40)
-    entry_penalizer_ha_1 = Entry(topCalc, textvariable=penalizer_ha_1).place(x=390, y=55, width=60, height=30)
+    entry_penalizer_ha_1 = Entry(topCalc, textvariable=penalizer_ha_1, bg="#f2f2f2").place(x=390, y=55, width=60, height=30)
 
     # Defensa pj1 ----------
     label_hd_1 = Label(topCalc, text='HD', bg="#3290F1").place(x=252, y=90)
-    entry_hd_1 = Entry(topCalc, textvariable=hd_1).place(x=250, y=105, width=60, height=30)
+    entry_hd_1 = Entry(topCalc, textvariable=hd_1, bg="#f2f2f2").place(x=250, y=105, width=60, height=30)
 
     label_bonus_hd_1 = Label(topCalc, text='Bono', bg="#3290F1").place(x=322, y=90)
-    entry_bonus_hd_1 = Entry(topCalc, textvariable=bonus_hd_1).place(x=320, y=105, width=60, height=30)
+    entry_bonus_hd_1 = Entry(topCalc, textvariable=bonus_hd_1, bg="#f2f2f2").place(x=320, y=105, width=60, height=30)
 
     label_penalizer_hd_1 = Label(topCalc, text='Penaliz.', bg="#3290F1").place(x=392, y=90)
-    entry_penalizer_hd_1 = Entry(topCalc, textvariable=penalizer_hd_1).place(x=390, y=105, width=60, height=30)
+    entry_penalizer_hd_1 = Entry(topCalc, textvariable=penalizer_hd_1, bg="#f2f2f2").place(x=390, y=105, width=60, height=30)
 
     # Equipamiento pj1 ----------
     label_armor_1 = Label(topCalc, text='TA', bg="#3290F1").place(x=252, y=140)
-    entry_armor_1 = Entry(topCalc, textvariable=armor_1).place(x=250, y=155, width=60, height=30)
+    entry_armor_1 = Entry(topCalc, textvariable=armor_1, bg="#f2f2f2").place(x=250, y=155, width=60, height=30)
 
     label_damage_1 = Label(topCalc, text='Daño', bg="#3290F1").place(x=322, y=140)
-    entry_damage_1 = Entry(topCalc, textvariable=damage_1).place(x=320, y=155, width=60, height=30)
+    entry_damage_1 = Entry(topCalc, textvariable=damage_1, bg="#f2f2f2").place(x=320, y=155, width=60, height=30)
 
     label_quality_1 = Label(topCalc, text='Calidad', bg="#3290F1").place(x=392, y=140)
-    entry_quality_1 = Entry(topCalc, textvariable=quality_1).place(x=390, y=155, width=60, height=30)
+    entry_quality_1 = Entry(topCalc, textvariable=quality_1, bg="#f2f2f2").place(x=390, y=155, width=60, height=30)
 
     # ¿CÓMO ACCEDER A EL VALOR ELEGIDO PARA USARLO?
     # quality = [
@@ -163,33 +163,33 @@ def calc():
     # Datos personaje 2 -------------------------------------------------
     # Ataque pj2 --------------------------------------------------------
     label_ha_2 = Label(topCalc, text='HA', bg="#3290F1").place(x=252, y=310)
-    entry_ha_2 = Entry(topCalc, textvariable=ha_2).place(x=250, y=325, width=60, height=30)
+    entry_ha_2 = Entry(topCalc, textvariable=ha_2, bg="#f2f2f2").place(x=250, y=325, width=60, height=30)
 
     label_bonus_ha_2 = Label(topCalc, text='Bono', bg="#3290F1").place(x=322, y=310)
-    entry_bonus_ha_2 = Entry(topCalc, textvariable=bonus_ha_2).place(x=320, y=325, width=60, height=30)
+    entry_bonus_ha_2 = Entry(topCalc, textvariable=bonus_ha_2, bg="#f2f2f2").place(x=320, y=325, width=60, height=30)
 
     label_penalizer_ha_2 = Label(topCalc, text='Penaliz.', bg="#3290F1").place(x=392, y=310)
-    entry_penalizer_ha_2 = Entry(topCalc, textvariable=penalizer_ha_2).place(x=390, y=325, width=60, height=30)
+    entry_penalizer_ha_2 = Entry(topCalc, textvariable=penalizer_ha_2, bg="#f2f2f2").place(x=390, y=325, width=60, height=30)
     
     # Defensa pj2 ---------
     label_hd_2 = Label(topCalc, text='HD', bg="#3290F1").place(x=252, y=360)
-    entry_hd_2 = Entry(topCalc, textvariable=hd_2).place(x=250, y=375, width=60, height=30)
+    entry_hd_2 = Entry(topCalc, textvariable=hd_2, bg="#f2f2f2").place(x=250, y=375, width=60, height=30)
 
     label_bonus_hd_2 = Label(topCalc, text='Bono', bg="#3290F1").place(x=322, y=360)
-    entry_bonus_hd_2 = Entry(topCalc, textvariable=bonus_hd_2).place(x=320, y=375, width=60, height=30)
+    entry_bonus_hd_2 = Entry(topCalc, textvariable=bonus_hd_2, bg="#f2f2f2").place(x=320, y=375, width=60, height=30)
 
     label_penalizer_hd_2 = Label(topCalc, text='Penaliz.', bg="#3290F1").place(x=392, y=360)
-    entry_penalizer_hd_2 = Entry(topCalc, textvariable=penalizer_hd_2).place(x=390, y=375, width=60, height=30)
+    entry_penalizer_hd_2 = Entry(topCalc, textvariable=penalizer_hd_2, bg="#f2f2f2").place(x=390, y=375, width=60, height=30)
 
     # Equipamiento pj2 ------
     label_armor_2 = Label(topCalc, text='TA', bg="#3290F1").place(x=252, y=410)
-    entry_armor_2 = Entry(topCalc, textvariable=armor_2).place(x=250, y=425, width=60, height=30)
+    entry_armor_2 = Entry(topCalc, textvariable=armor_2, bg="#f2f2f2").place(x=250, y=425, width=60, height=30)
 
     label_damage_2 = Label(topCalc, text='Daño', bg="#3290F1").place(x=322, y=410)
-    entry_damage_2 = Entry(topCalc, textvariable=damage_2).place(x=320, y=425, width=60, height=30)
+    entry_damage_2 = Entry(topCalc, textvariable=damage_2, bg="#f2f2f2").place(x=320, y=425, width=60, height=30)
 
     label_quality_2 = Label(topCalc, text='Calidad', bg="#3290F1").place(x=392, y=410)
-    entry_quality_2 = Entry(topCalc, textvariable=quality_2).place(x=390, y=425, width=60, height=30)
+    entry_quality_2 = Entry(topCalc, textvariable=quality_2, bg="#f2f2f2").place(x=390, y=425, width=60, height=30)
 
     # Botones pj2 ---------
     def atack_2():

@@ -36,7 +36,7 @@ def roll():
     d6_btn = Button(topDice, text='D6', cursor="pirate", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD', command=lambda:roll_dice(6))
     d6_btn.place(relx= 0.8, rely=0.75, anchor='center')
     
-    d10_btn = Button(topDice, text='D10', cursor="pirate", bg="white", fg="black", activeforeground="black", activebackground='#BDBDBD', command=lambda:roll_dice(10))
+    d10_btn = Button(topDice, text='D10', cursor="pirate", bg="#f2f2f2", fg="black", activeforeground="black", activebackground='#BDBDBD', command=lambda:roll_dice(10))
     d10_btn.place(relx= 0.2, rely=0.9, anchor='center')
     
     d12_btn = Button(topDice, text='D12', cursor="pirate", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD', command=lambda:roll_dice(12))
@@ -45,5 +45,5 @@ def roll():
     d20_btn = Button(topDice, text='D20', cursor="pirate", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD', command=lambda:roll_dice(20))
     d20_btn.place(relx= 0.6, rely=0.9, anchor='center')
 
-    d100_btn = Button(topDice, text='D100', cursor="pirate", bg="white", fg="black", activeforeground="black", activebackground='#BDBDBD', command=lambda:roll_dice(100))
+    d100_btn = Button(topDice, text='D100', cursor="pirate", bg="#f2f2f2", fg="black", activeforeground="black", activebackground='#BDBDBD', command=lambda:roll_dice(100))
     d100_btn.place(relx= 0.8, rely=0.9, anchor='center')
