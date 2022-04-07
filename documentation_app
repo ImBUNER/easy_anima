@@ -57,8 +57,18 @@
 
 #Módulo "calculator_frontend"
 + Este módulo permite abrir la ventana de la calculadora de combate, contiene toda la lógica para que el diseño sea el deseado y recoger los parámetros que introduce el usuario
-+ Importamos 
-
++ La función "calc" abre la ventana de la calculadora y aloja el resto del código
+    - Insertamos, cambiamos tamaño, usamos filtros para mejorar calidad e insertamos las imagenes de jugador_1 y jugador_2 en un label (etiqueta) colocada en la primera columna y fila
+    - Realizamos la misma operación con la imagen de "versus"
+    - Creamos un contenedor donde añadimos una etiqueta con la información a mostrar al usuario sobre la calculadora
+    - Creamos el contenedor donde mostrar al usuario el resultado del cálculo
+    - Declaramos "IntVar" las variables a usar en los "inputs", es decir, donde introducirá el usuario los valores
+    - Creamos la función "get_data" que recogerá los valores de los "inputs" que introduce el usuario
+        Estos datos se introducen automaticamente a los atributos de nuestros objetos creados previamente en "calculator_backend", los cuales los usaremos para realizar los calculos
+    - Creamos las etiquetas (label) y entrys (input) para cada uno de los datos que necesitamos del personaje y les asignamos una de las variables declaradas anteriormente
+        Usamos ".place(x, y)" para colocarlos mediante coordenadas
+    - Creamos los botones que realizarán la función de "atacar" y "defender" en cada personaje (se declaran al final del conjunto de datos de dicho personaje)
+        Estos botones tienen su propia función la cual primero llama a la función que recoge los datos y también al método "atacar" o "defender" de la clase "Character" en el módulo "calculator_backend"
 
 
 
