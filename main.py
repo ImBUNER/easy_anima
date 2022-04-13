@@ -1,7 +1,6 @@
 from tkinter import Tk, Frame, Label, Button
 from PIL import Image, ImageTk
-import dices, calculator_frontend, character_frontend
-
+import dice_window, calculator_window, character_window
 
 class app:
     def __init__(self, root):
@@ -11,7 +10,7 @@ class app:
         self.resizable(0, 0)
         self.configure(bg="black")
 
-        # Logo de la app
+        # App logo
         logo = Image.open("static/logo_app.png")
         logo = logo.resize((650, 520), Image.ANTIALIAS)
         logo = ImageTk.PhotoImage(logo)
@@ -19,11 +18,11 @@ class app:
         logo_label.image = logo
         logo_label.grid(column=1, row=0)
 
-        # Menú lateral
+        # Lateral menu
         menu_root = Frame(self, bg="#3290F1")
         menu_root.grid(row=0, column=0, sticky="ns")
 
-        # Botones del menú
+        # Menu buttons
         btn_create = Button(
             menu_root,
             text="Nueva Ficha",
@@ -32,7 +31,7 @@ class app:
             fg="white",
             activeforeground="black",
             activebackground="#BDBDBD",
-            command=character_frontend.card,
+            command=character_window.open,
         )
         btn_create.grid(row=0, column=0, sticky="ew", padx=20, pady=10)
 
@@ -44,7 +43,7 @@ class app:
             fg="white",
             activeforeground="black",
             activebackground="#BDBDBD",
-            command=calculator_frontend.calc, 
+            command=calculator_window.open, 
         )
         btn_calc.grid(row=1, column=0, sticky="ew", padx=20, pady=10)
 
@@ -56,14 +55,13 @@ class app:
             fg="white",
             activeforeground="black",
             activebackground="#BDBDBD",
-            command=dices.roll,
+            command=dice_window.open,
         )
         btn_dice.grid(row=2, column=0, sticky="ew", padx=20, pady=10)
 
 
 # I'm BUNER
 if __name__ == "__main__":
-    # start reading a config file for general app configuration.
     root = Tk()
     application = app(root)
     root.mainloop()
