@@ -1,13 +1,4 @@
-import random
-
-# Function that roll a dice
-def roll_dice(max):
-    dice_result = random.randint(1, max)
-    if max == 100:
-        if dice_result >= 90:
-            dice_result = dice_result + random.randint(1, 100)
-    return(dice_result)
-
+import dice
 
 # Function that calculates the damage taken
 def calculate_damage(attacker, defender, combat_result):
@@ -50,8 +41,8 @@ class Character:
         self.quality=quality
 
     def attack(self, defender):
-        attack_dice=roll_dice(100)
-        defense_dice=roll_dice(100)
+        attack_dice=dice.roll(100)
+        defense_dice=dice.roll(100)
     
         final_attack=self.ha+self.bonus_ha-self.penalizer_ha+attack_dice
         final_defense=defender.hd+defender.bonus_hd-defender.penalizer_hd+defense_dice
@@ -61,8 +52,8 @@ class Character:
             final_defense=0
         combat_result=final_attack-final_defense
         
-        if self.ha==0 & self.hd==0 & defender.ha==0 & defender.hd==0:
-            return("¿Qué quieres calcular?\n Las fichas están vacías")
+        if self.ha==0:
+            return("Valores incompletos\n Introduce el ataque")
         else:
             if combat_result > 0:        
                 life_result=calculate_damage(self, defender, combat_result)
@@ -76,8 +67,8 @@ class Character:
                     \n ATAQUE FALLIDO: \n Pierdes de {(abs(combat_result))}""")
 
     def defend(self, attacker):
-        attack_dice=roll_dice(100)
-        defense_dice=roll_dice(100)
+        attack_dice=dice.roll(100)
+        defense_dice=dice.roll(100)
 
         final_defense=self.hd+self.bonus_hd-self.penalizer_hd+defense_dice
         final_attack=attacker.ha+attacker.bonus_ha-attacker.penalizer_ha+attack_dice
@@ -87,8 +78,8 @@ class Character:
             final_defense=0
         combat_result=final_attack-final_defense
 
-        if self.ha==0 & self.hd==0 & attacker.ha==0 & attacker.hd==0:
-            return("¿Qué quieres calcular?\n Las fichas están vacías")
+        if self.hd==0:
+            return("Valores incompletos\n Introduce la defensa")
         else:
             if combat_result > 0:        
                 life_result=calculate_damage(attacker, self, combat_result)
@@ -107,9 +98,26 @@ pj_1=Character(0, 0, 0, 0, 0, 0, 0, 0, 0)
 pj_2=Character(0, 0, 0, 0, 0, 0, 0, 0, 0)
 
 
+# ESTO AYUDARÍA A TENER SOLO UNA FUNCIÓN DONDE ELEGIR LA ACCIÓN, Y ESTABLECER ATACANTES Y DEFENSORES EN LUGAR DE UNA PARA CADA BOTÓN
+    # ¿POR QUÉ NO COGE LAS VARIABLES QUE LE PASO? No hace caso de attacker y defender en los IF
+def combat(attacker, defender, action):
+    if action == "attack":
+        if attacker == "pj_1":
+            return(pj_1.attack(pj_2))
+        elif attacker == "pj_2":
+            return(pj_2.attack(pj_1))
+    elif action == "defend":
+        if defender == "pj_1":
+            return(pj_1.defend(pj_2))
+        elif defender == "pj_2":
+            return(pj_2.defend(pj_1))
 
 
-
+# def combat(attacker, defender, action):
+#     if action == "attack":
+#         return(attacker.attack(defender))
+#     elif action == "defend":
+#         return(defender.defend(attacker))
 
 
 # La calculadora funciona perfectamente, pero no sé porq me sale el mensaje de ficha vacía al "DEFENDER" si les pongo HD. Debería hacerlo SOLO si los cuatro están a 0
@@ -124,8 +132,6 @@ pj_2=Character(0, 0, 0, 0, 0, 0, 0, 0, 0)
 # ¿FILTRAR ERRORES?
 
 # añadir dropmenu para la calidad del arma 
-
-# no consigo que muestre todo como quiero. ¿debo usar el return de todos en una sola función?
 
 # LE PONGO UN TRY EXCEPT A LAS FUNCIONES PRINCIPALES DE ATACAR Y DEFENDER POR SI NO HAY NINGÚN VALOR EN ALGUNA CASILLA PERO NO DEVUELVE EL RETURN, SIGUE DANDO ERROR
 

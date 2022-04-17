@@ -1,8 +1,8 @@
-from tkinter import RAISED, Toplevel, Frame, Label, Button, Entry, Text
+from tkinter import CENTER, NE, RIDGE, Toplevel, Frame, Label, Button, Entry, Text
+from tkinter.ttk import Separator
 from PIL import Image, ImageTk
 from tkinter import filedialog
-import logic   
-    
+
 def open():
     topCard = Toplevel()
     topCard.title('ficha en blanco - Easy Anima')
@@ -28,7 +28,7 @@ def open():
     btn1.place(x=410, y=960)
 
     btn2 = Button(topCard, text="Page 1", command=change_page_1, cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
-    btn2.place(x=300, y=960)
+    btn2.place(x=305, y=960)
 
     # Info about the current page
     info_page_1 = Label(page_1, text='Atributos - pagina 1', bg='#3290F1')
@@ -65,7 +65,10 @@ def open():
         return image_file
 
     
-    # PAGE 2 - Character background -----------------------------------------------------
+
+
+
+    # PAGE 2 - Character background ----------------------------------------------------------
 
     #Character data -----------------
     #Row 0
@@ -141,8 +144,137 @@ def open():
     label_box_varied_equipment =Label(page_2, text='Equipo variado', bg='#3290F1').place(x=420, y=658)
     box_varied_equipment = Text(page_2, bg="#f2f2f2", height=15, width=42).place(x=410, y=680)
 
+
+
     
 
-# PAGE 1 - Character characteristic -----------------------------------------------------
+    # PAGE 1 - Character characteristic -----------------------------------------------------------
 
-# Character stats ---------------------
+    # Character stats ---------------------
+    label_stats = Label(page_1, text='Características', bg='#3290F1', font='bold').place(x=70, y=8)
+    stats_zone = Frame(page_1, relief=RIDGE, bg='#3290F1', bd="5", height="140", width="220").place(x=20, y=30)
+
+    # Column 1
+    label_AGI = Label(page_1, text='AGI', bg='#3290F1').place(anchor=NE, x=60, y=42)
+    entry_AGI = Entry(page_1, width=5, bg="#f2f2f2", justify=CENTER).place(x=65, y=40)
+
+    label_CON = Label(page_1, text='CON', bg='#3290F1').place(anchor=NE, x=60, y=72)
+    entry_CON = Entry(page_1, width=5, bg="#f2f2f2", justify=CENTER).place(x=65, y=70)
+
+    label_DES = Label(page_1, text='DES', bg='#3290F1').place(anchor=NE, x=60, y=102)
+    entry_DES = Entry(page_1, width=5, bg="#f2f2f2", justify=CENTER).place(x=65, y=100)
+
+    label_FUE = Label(page_1, text='FUE', bg='#3290F1').place(anchor=NE, x=60, y=132)
+    entry_FUE = Entry(page_1, width=5, bg="#f2f2f2", justify=CENTER).place(x=65, y=130)
+
+    # Column 2
+    label_INT = Label(page_1, text='INT', bg='#3290F1').place(anchor=NE, x=170, y=42)
+    entry_INT = Entry(page_1, width=5, bg="#f2f2f2", justify=CENTER).place(x=175, y=40)
+
+    label_PER = Label(page_1, text='PER', bg='#3290F1').place(anchor=NE, x=170, y=72)
+    entry_PER = Entry(page_1, width=5, bg="#f2f2f2", justify=CENTER).place(x=175, y=70)
+
+    label_POD = Label(page_1, text='POD', bg='#3290F1').place(anchor=NE, x=170, y=102)
+    entry_POD = Entry(page_1, width=5, bg="#f2f2f2", justify=CENTER).place(x=175, y=100)
+
+    label_VOL = Label(page_1, text='VOL', bg='#3290F1').place(anchor=NE, x=170, y=132)
+    entry_VOL = Entry(page_1, width=5, bg="#f2f2f2", justify=CENTER).place(x=175, y=130)
+
+
+
+    # Secondary skills
+    label_secondary = Label(page_1, text='Habilidades Secundarias', bg='#3290F1', font='bold').place(x=580, y=8)
+    secondary_zone = Frame(page_1, relief=RIDGE, bg='#3290F1', bd="5", height="950", width="170").place(x=610, y=30)
+
+    # Athletic
+    label_acrobatics = Label(page_1, text='Acrobacias', bg='#3290F1').place(anchor=NE, x=700, y=40)
+    entry_acrobatics = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=40)
+
+    label_athletic = Label(page_1, text='Atletismo', bg='#3290F1').place(anchor=NE, x=700, y=70)
+    entry_athletic = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=70)
+
+    label_ride = Label(page_1, text='Montar', bg='#3290F1').place(anchor=NE, x=700, y=100)
+    entry_ride = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=100)
+
+    label_climb = Label(page_1, text='Trepar', bg='#3290F1').place(anchor=NE, x=700, y=130)
+    entry_climb = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=130)
+
+    label_jump = Label(page_1, text='Saltar', bg='#3290F1').place(anchor=NE, x=700, y=160)
+    entry_jump = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=160)
+
+    label_drive = Label(page_1, text='Conducir', bg='#3290F1').place(anchor=NE, x=700, y=190)
+    entry_drive = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=190)
+
+    separator = Separator(page_1).place(x=630, y=230, width=120, height=2)
+
+    # Social
+    label_style = Label(page_1, text='Estilo', bg='#3290F1').place(anchor=NE, x=700, y=250)
+    entry_style = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=250)
+
+    label_intimidate = Label(page_1, text='Intimidar', bg='#3290F1').place(anchor=NE, x=700, y=280)
+    entry_intimidate = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=280)
+
+    label_leadership = Label(page_1, text='Liderazgo', bg='#3290F1').place(anchor=NE, x=700, y=310)
+    entry_leadership = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=310)
+
+    label_persuasion = Label(page_1, text='Persuasión', bg='#3290F1').place(anchor=NE, x=700, y=340)
+    entry_persuasion = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=340)
+
+    label_trade = Label(page_1, text='Comercio', bg='#3290F1').place(anchor=NE, x=700, y=370)
+    entry_trade = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=370)
+
+    label_wander = Label(page_1, text='Callejear', bg='#3290F1').place(anchor=NE, x=700, y=400)
+    entry_wander = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=400)
+
+    label_etiquette = Label(page_1, text='Etiqueta', bg='#3290F1').place(anchor=NE, x=700, y=430)
+    entry_etiquette = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=430)
+
+    separator = Separator(page_1).place(x=630, y=470, width=120, height=2)
+
+    # Knowledge
+    label_animal = Label(page_1, text='Animales', bg='#3290F1').place(anchor=NE, x=700, y=490)
+    entry_animal = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=490)
+
+    label_science = Label(page_1, text='Etiqueta', bg='#3290F1').place(anchor=NE, x=700, y=520)
+    entry_science = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=520)
+
+    label_law = Label(page_1, text='Ley', bg='#3290F1').place(anchor=NE, x=700, y=550)
+    entry_law = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=550)
+
+    label_plant = Label(page_1, text='Herbolaria', bg='#3290F1').place(anchor=NE, x=700, y=580)
+    entry_plant = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=580)
+
+    label_history = Label(page_1, text='Historia', bg='#3290F1').place(anchor=NE, x=700, y=610)
+    entry_history = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=610)
+
+    label_tactic = Label(page_1, text='Táctica', bg='#3290F1').place(anchor=NE, x=700, y=640)
+    entry_tactic = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=640)
+
+    label_medicine = Label(page_1, text='Medicina', bg='#3290F1').place(anchor=NE, x=700, y=670)
+    entry_medicine = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=670)
+
+    label_memorize = Label(page_1, text='Memorizar', bg='#3290F1').place(anchor=NE, x=700, y=700)
+    entry_memorize = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=700)
+
+    label_navigation = Label(page_1, text='Navegación', bg='#3290F1').place(anchor=NE, x=700, y=730)
+    entry_navigation = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=730)
+
+    label_occultism = Label(page_1, text='Ocultismo', bg='#3290F1').place(anchor=NE, x=700, y=760)
+    entry_occultism = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=760)
+
+    label_value = Label(page_1, text='Tasación', bg='#3290F1').place(anchor=NE, x=700, y=790)
+    entry_value = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=790)
+
+    label_magic = Label(page_1, text='V.Mágica', bg='#3290F1').place(anchor=NE, x=700, y=820)
+    entry_magic = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=820)
+
+    separator = Separator(page_1).place(x=630, y=860, width=120, height=2)
+
+    label_coldness = Label(page_1, text='Frialdad', bg='#3290F1').place(anchor=NE, x=700, y=880)
+    entry_coldness = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=880)
+
+    label_strenght = Label(page_1, text='P.Fuerza', bg='#3290F1').place(anchor=NE, x=700, y=910)
+    entry_strenght = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=910)
+
+    label_pain = Label(page_1, text='Res.Dolor', bg='#3290F1').place(anchor=NE, x=700, y=940)
+    entry_pain = Entry(page_1, width=6, bg="#f2f2f2", justify=CENTER).place(x=710, y=940)

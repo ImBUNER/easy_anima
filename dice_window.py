@@ -1,5 +1,5 @@
 from tkinter import Toplevel, Label, Button
-import logic
+import dice
 
 def open():
     topDice = Toplevel()
@@ -9,9 +9,9 @@ def open():
     topDice.config(bg="#3290F1")
 
     # Function that places the dice in the label
-    def place_dice(max):
-        dice = logic.roll_dice(max)
-        label.configure(text = dice)
+    def place_dice(side):
+        dice_result = dice.roll(side)
+        label.configure(text = dice_result)
         label.pack()
 
     # Container where print the dice

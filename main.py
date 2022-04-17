@@ -10,6 +10,10 @@ class app:
         self.resizable(0, 0)
         self.configure(bg="black")
 
+        # Default configuration for app font
+        # default_font = font.nametofont("TkDefaultFont")
+        # default_font.configure(weight="bold")
+
         # App logo
         logo = Image.open("static/logo_app.png")
         logo = logo.resize((650, 520), Image.ANTIALIAS)

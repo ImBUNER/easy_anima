@@ -1,4 +1,4 @@
-from tkinter import LEFT, RAISED, IntVar, OptionMenu, StringVar, Toplevel, Label, Entry, Button, Frame
+from tkinter import LEFT, RAISED, IntVar, Toplevel, Label, Entry, Button, Frame
 from PIL import Image, ImageTk
 import logic
 
@@ -42,8 +42,8 @@ def open():
 
     # Result container
     result_zone = Frame(topCalc)
-    result_zone.place(x=560, y=10)
-    result_label = Label(result_zone, bd="4", relief=RAISED, wraplength=240, height="28", width="34", bg='black', fg='white')
+    result_zone.place(x=560, y=20)
+    result_label = Label(result_zone, bd="4", relief=RAISED, wraplength=240, height="26", width="32", bg='black', fg='white')
     result_label.pack()
 
     # Entry variables
@@ -136,12 +136,7 @@ def open():
     # menu_quality = OptionMenu(topCalc, clicked, *quality)
     # menu_quality.place(x=390, y=155, width=60, height=30)
 
-    # ESTO AYUDARÍA A TENER SOLO UNA FUNCIÓN DONDE ELEGIR LA ACCIÓN, Y ESTABLECER ATACANTES Y DEFENSORES EN LUGAR DE UNA PARA CADA BOTÓN
-    # ¿POR QUÉ NO COGE LAS VARIABLES QUE LE PASO?
-    # def combat(attacker, defender, action):
-    #     get_data()
-    #     result=logic.attacker.action(logic.defender)
-    #     result_label.config(text=result)
+
 
     # PJ1 Buttons ----------
     def attack_1():
@@ -202,6 +197,20 @@ def open():
         get_data()
         result=logic.pj_2.defend(logic.pj_1)
         result_label.config(text=result)
-    btn_defense_2 = Button(topCalc, text="Defender", cursor="plus", bg="black", fg="cyan", activebackground='#BDBDBD', command=defense_2)
+    btn_defense_2 = Button(topCalc, text="Defender", cursor="plus", bg="black", fg="cyan", activebackground='#BDBDBD', command=lambda: do_combat("pj_1","pj_2","defend"))
     btn_defense_2.place(x=460, y=400, width=80, height=30)
 
+
+
+
+
+
+
+    # ESTO AYUDARÍA A TENER SOLO UNA FUNCIÓN DONDE ELEGIR LA ACCIÓN, Y ESTABLECER ATACANTES Y DEFENSORES EN LUGAR DE UNA PARA CADA BOTÓN
+
+    def do_combat(attacker, defender, action):
+        get_data()
+        result = logic.combat(attacker, defender, action)
+        result_label.config(text=result)
+
+    # EL DEFENSE_2 ESTÁ CAMBIADO PARA PROBAR LA NUEVA FUNCIÓN
