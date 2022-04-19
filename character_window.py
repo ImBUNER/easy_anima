@@ -470,20 +470,20 @@ def open():
     # Buttoms -------------------------------
     zone_buttoms = Frame(page_1, relief=RIDGE, bg='#3290F1', bd="5", height="60", width="575").place(x=15, y=880)
 
-    btn_initiative = Button(topCard, text="Turno", cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
+    btn_initiative = Button(page_1, text="Turno", cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
     btn_initiative.place(x=32, y=895)
 
-    btn_combat = Button(topCard, text="Combate", cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
+    btn_combat = Button(page_1, text="Combate", cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
     btn_combat.place(x=113, y=895)
 
-    # btn_defense = Button(topCard, text="Defender", cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
+    # btn_defense = Button(page_1, text="Defender", cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
     # btn_defense.place(x=185, y=895)
 
-    btn_secondary = Button(topCard, text="Secundaria", cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
+    btn_secondary = Button(page_1, text="Secundaria", cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
     btn_secondary.place(x=217, y=895)
 
-    btn_stat = Button(topCard, text="Característica", cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
+    btn_stat = Button(page_1, text="Característica", cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
     btn_stat.place(x=335, y=895)
 
-    btn_resistance = Button(topCard, text="Resistencia", cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
+    btn_resistance = Button(page_1, text="Resistencia", cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
     btn_resistance.place(x=470, y=895)
