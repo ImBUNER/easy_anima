@@ -24,18 +24,18 @@ def open():
 
 
     # Page change buttons
-    btn1 = Button(topCard, text="Página 2", command=change_page_2, cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
+    btn1 = Button(topCard, text="Página 2", command=change_page_2, cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD', width=5)
     btn1.place(x=410, y=960)
 
-    btn2 = Button(topCard, text="Página 1", command=change_page_1, cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
+    btn2 = Button(topCard, text="Página 1", command=change_page_1, cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD', width=5)
     btn2.place(x=300, y=960)
 
     # Info about the current page
     info_page_1 = Label(page_1, text='Atributos - pagina 1', bg='#3290F1')
-    info_page_1.place(x=90, y=960)
+    info_page_1.place(x=90, y=970)
     
     info_page_2 = Label(page_2, text='Transfondo - pagina 2', bg='#3290F1')
-    info_page_2.place(x=90, y=960)
+    info_page_2.place(x=90, y=970)
 
     # Default page
     change_page_1()
