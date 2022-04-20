@@ -121,38 +121,6 @@ def open():
     label_quality_1 = Label(topCalc, text='Calidad', bg="#3290F1").place(x=392, y=140)
     entry_quality_1 = Entry(topCalc, textvariable=quality_1, bg="#f2f2f2").place(x=390, y=155, width=60, height=30)
 
-    # ¿CÓMO ACCEDER A EL VALOR ELEGIDO PARA USARLO?
-    # quality = [
-    #     "-15",
-    #     "-10",
-    #     "-5",
-    #     "0",
-    #     "+5",
-    #     "+10",
-    #     "+15"
-    # ]
-    # clicked = StringVar()
-    # clicked.set(quality[3])
-    # menu_quality = OptionMenu(topCalc, clicked, *quality)
-    # menu_quality.place(x=390, y=155, width=60, height=30)
-
-
-
-    # PJ1 Buttons ----------
-    def attack_1():
-        get_data()
-        result=logic.pj_1.attack(logic.pj_2)
-        result_label.config(text=result)
-    btn_attack_1 = Button(topCalc, text="Atacar", cursor="plus", bg="black", fg="orange", activebackground='#BDBDBD', command=attack_1)
-    btn_attack_1.place(x=460, y=75, width=80, height=30)
-
-    def defense_1():
-        get_data()
-        result=logic.pj_1.defend(logic.pj_2)
-        result_label.config(text=result)
-    btn_defense_1 = Button(topCalc, text="Defender", cursor="plus", bg="black", fg="orange", activebackground='#BDBDBD', command=defense_1)
-    btn_defense_1.place(x=460, y=125, width=80, height=30)
-    
 
     # Character 2 data -------------------------------------------------
     # PJ2 Attack --------------------------------------------------------
@@ -185,32 +153,74 @@ def open():
     label_quality_2 = Label(topCalc, text='Calidad', bg="#3290F1").place(x=392, y=410)
     entry_quality_2 = Entry(topCalc, textvariable=quality_2, bg="#f2f2f2").place(x=390, y=425, width=60, height=30)
 
+
+    # Buttons ------------------------------------
+    # PJ1 Buttons ----------
+    btn_attack_1 = Button(
+        topCalc, 
+        text="Atacar", 
+        cursor="plus", 
+        bg="black", 
+        fg="orange", 
+        activebackground='#BDBDBD', 
+        command=lambda: do_combat("pj_1","pj_2","attack")
+        )
+    btn_attack_1.place(x=460, y=75, width=80, height=30)
+
+    btn_defense_1 = Button(
+        topCalc, 
+        text="Defender", 
+        cursor="plus", 
+        bg="black", 
+        fg="orange", 
+        activebackground='#BDBDBD', 
+        command=lambda: do_combat("pj_2","pj_1","defend")
+        )
+    btn_defense_1.place(x=460, y=125, width=80, height=30)
+
     # PJ2 Buttons ---------
-    def attack_2():
-        get_data()
-        result=logic.pj_2.attack(logic.pj_1)
-        result_label.config(text=result)
-    btn_attack_2 = Button(topCalc, text="Atacar", cursor="plus", bg="black", fg="cyan", activebackground='#BDBDBD', command=attack_2)
+    btn_attack_2 = Button(
+        topCalc, 
+        text="Atacar", 
+        cursor="plus", 
+        bg="black", 
+        fg="cyan", 
+        activebackground='#BDBDBD', 
+        command=lambda: do_combat("pj_2","pj_1","attack")
+        )
     btn_attack_2.place(x=460, y=350, width=80, height=30)
 
-    def defense_2():
-        get_data()
-        result=logic.pj_2.defend(logic.pj_1)
-        result_label.config(text=result)
-    btn_defense_2 = Button(topCalc, text="Defender", cursor="plus", bg="black", fg="cyan", activebackground='#BDBDBD', command=lambda: do_combat("pj_1","pj_2","defend"))
+    btn_defense_2 = Button(
+        topCalc, 
+        text="Defender", 
+        cursor="plus", 
+        bg="black", 
+        fg="cyan", 
+        activebackground='#BDBDBD', 
+        command=lambda: do_combat("pj_1","pj_2","defend")
+        )
     btn_defense_2.place(x=460, y=400, width=80, height=30)
 
-
-
-
-
-
-
-    # ESTO AYUDARÍA A TENER SOLO UNA FUNCIÓN DONDE ELEGIR LA ACCIÓN, Y ESTABLECER ATACANTES Y DEFENSORES EN LUGAR DE UNA PARA CADA BOTÓN
-
+    # Function used in buttons to get datas and call logic actions
     def do_combat(attacker, defender, action):
         get_data()
         result = logic.combat(attacker, defender, action)
         result_label.config(text=result)
 
-    # EL DEFENSE_2 ESTÁ CAMBIADO PARA PROBAR LA NUEVA FUNCIÓN
+
+
+    # Hacer que la calidad se elija mediante menú de opciones
+    # ¿CÓMO ACCEDER A EL VALOR ELEGIDO PARA USARLO?
+    # quality = [
+    #     "-15",
+    #     "-10",
+    #     "-5",
+    #     "0",
+    #     "+5",
+    #     "+10",
+    #     "+15"
+    # ]
+    # clicked = StringVar()
+    # clicked.set(quality[3])
+    # menu_quality = OptionMenu(topCalc, clicked, *quality)
+    # menu_quality.place(x=390, y=155, width=60, height=30)

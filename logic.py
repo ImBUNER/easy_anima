@@ -98,8 +98,10 @@ pj_1=Character(0, 0, 0, 0, 0, 0, 0, 0, 0)
 pj_2=Character(0, 0, 0, 0, 0, 0, 0, 0, 0)
 
 
+
+
 # ESTO AYUDARÍA A TENER SOLO UNA FUNCIÓN DONDE ELEGIR LA ACCIÓN, Y ESTABLECER ATACANTES Y DEFENSORES EN LUGAR DE UNA PARA CADA BOTÓN
-    # ¿POR QUÉ NO COGE LAS VARIABLES QUE LE PASO? No hace caso de attacker y defender en los IF
+# ¿POR QUÉ NO COGE LAS VARIABLES QUE LE PASO? No hace caso de attacker y defender en los IF
 def combat(attacker, defender, action):
     if action == "attack":
         if attacker == "pj_1":
@@ -121,6 +123,11 @@ def combat(attacker, defender, action):
 
 
 # La calculadora funciona perfectamente, pero no sé porq me sale el mensaje de ficha vacía al "DEFENDER" si les pongo HD. Debería hacerlo SOLO si los cuatro están a 0
+
+
+
+
+
 
 #EN CALCULAR DAÑO, ¿ESTÁ BIEN CUANDO CALCULO LA armor FINAL EL CAMBIARLE EL NOMBRE? 
 #¿DEBERÍA SEGUIR LLAMANDOLO defender.armor? no sé si es mejor arrastrarlo o usar otra variable

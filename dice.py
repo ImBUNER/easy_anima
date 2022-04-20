@@ -9,3 +9,4 @@ def roll(side):
         if dice_result >= 90:
             dice_result = dice_result + random.randint(1, 100)
     return(dice_result)
+    

@@ -1,6 +1,6 @@
 from tkinter import Tk, Frame, Label, Button
 from PIL import Image, ImageTk
-import dice_window, calculator_window, character_window
+import view.dice_window, view.calculator_window, view.character_window
 
 class app:
     def __init__(self, root):
@@ -35,7 +35,7 @@ class app:
             fg="white",
             activeforeground="black",
             activebackground="#BDBDBD",
-            command=character_window.open,
+            command=view.character_window.open,
         )
         btn_create.grid(row=0, column=0, sticky="ew", padx=20, pady=10)
 
@@ -47,7 +47,7 @@ class app:
             fg="white",
             activeforeground="black",
             activebackground="#BDBDBD",
-            command=calculator_window.open, 
+            command=view.calculator_window.open, 
         )
         btn_calc.grid(row=1, column=0, sticky="ew", padx=20, pady=10)
 
@@ -59,13 +59,13 @@ class app:
             fg="white",
             activeforeground="black",
             activebackground="#BDBDBD",
-            command=dice_window.open,
+            command=view.dice_window.open,
         )
         btn_dice.grid(row=2, column=0, sticky="ew", padx=20, pady=10)
 
 
 # I'm BUNER
-if __name__ == "__main__":
-    root = Tk()
-    application = app(root)
-    root.mainloop()
+# if __name__ == "__main__":
+#     root = Tk()
+#     application = app(root)
+#     root.mainloop()
