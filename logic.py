@@ -100,46 +100,22 @@ pj_2=Character(0, 0, 0, 0, 0, 0, 0, 0, 0)
 
 
 
-# ESTO AYUDARÍA A TENER SOLO UNA FUNCIÓN DONDE ELEGIR LA ACCIÓN, Y ESTABLECER ATACANTES Y DEFENSORES EN LUGAR DE UNA PARA CADA BOTÓN
-# ¿POR QUÉ NO COGE LAS VARIABLES QUE LE PASO? No hace caso de attacker y defender en los IF
-def combat(attacker, defender, action):
-    if action == "attack":
-        if attacker == "pj_1":
-            return(pj_1.attack(pj_2))
-        elif attacker == "pj_2":
-            return(pj_2.attack(pj_1))
-    elif action == "defend":
-        if defender == "pj_1":
-            return(pj_1.defend(pj_2))
-        elif defender == "pj_2":
-            return(pj_2.defend(pj_1))
-
-
-# def combat(attacker, defender, action):
-#     if action == "attack":
-#         return(attacker.attack(defender))
-#     elif action == "defend":
-#         return(defender.defend(attacker))
-
-
-# La calculadora funciona perfectamente, pero no sé porq me sale el mensaje de ficha vacía al "DEFENDER" si les pongo HD. Debería hacerlo SOLO si los cuatro están a 0
 
 
 
 
+# HACER UNA FUNCIÓN QUE LLAME AL OBJETO CON SU ACCIÓN. FIN Y PSARLO AL COMANDO 
 
 
-#EN CALCULAR DAÑO, ¿ESTÁ BIEN CUANDO CALCULO LA armor FINAL EL CAMBIARLE EL NOMBRE? 
-#¿DEBERÍA SEGUIR LLAMANDOLO defender.armor? no sé si es mejor arrastrarlo o usar otra variable
+# EN CALCULAR DAÑO, ¿ESTÁ BIEN CUANDO CALCULO LA armor FINAL EL CAMBIARLE EL NOMBRE? 
+# ¿DEBERÍA SEGUIR LLAMANDOLO defender.armor? no sé si es mejor arrastrarlo o usar otra variable
 
-#¿ESTÁ BIEN EL CÓMO LE PASO EL RESTULADO DE COMBATE DE attack()?
+# ¿ESTÁ BIEN EL CÓMO LE PASO EL RESTULADO DE COMBATE DE attack()?
 
 # (esto no es 100% necesario) ¿Cómo hago para que se redondee el resultado de habilidad final en grupos de 10? es decir: 90, 100, 110, etc. 
 
-# ¿FILTRAR ERRORES?
+# FILTRAR ERRORES
 
 # añadir dropmenu para la calidad del arma 
 
 # LE PONGO UN TRY EXCEPT A LAS FUNCIONES PRINCIPALES DE ATACAR Y DEFENDER POR SI NO HAY NINGÚN VALOR EN ALGUNA CASILLA PERO NO DEVUELVE EL RETURN, SIGUE DANDO ERROR
-
-# al aumentar el tamaño de la fuente en el label del resultado en calculadora_front, se descoloca y no me permite dejarlo en el centro

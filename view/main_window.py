@@ -1,4 +1,4 @@
-from tkinter import Tk, Frame, Label, Button
+from tkinter import Frame, Label, Button
 from PIL import Image, ImageTk
 import view.dice_window, view.calculator_window, view.character_window
 
@@ -9,10 +9,6 @@ class app:
         self.geometry("750x510")
         self.resizable(0, 0)
         self.configure(bg="black")
-
-        # Default configuration for app font
-        # default_font = font.nametofont("TkDefaultFont")
-        # default_font.configure(weight="bold")
 
         # App logo
         logo = Image.open("static/logo_app.png")
@@ -62,10 +58,3 @@ class app:
             command=view.dice_window.open,
         )
         btn_dice.grid(row=2, column=0, sticky="ew", padx=20, pady=10)
-
-
-# I'm BUNER
-# if __name__ == "__main__":
-#     root = Tk()
-#     application = app(root)
-#     root.mainloop()
