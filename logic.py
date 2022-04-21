@@ -22,7 +22,7 @@ def calculate_damage(attacker, defender, combat_result):
         return("Absorción. \n No hay daño.")
     else:
         final_damage= int(attacker.damage*combat_percentage)
-        return("El defensor pierde: \n " + str(final_damage) + " de vida")
+        return("El defensor pierde " + str(final_damage) + " de vida")
 
 
 
@@ -53,18 +53,18 @@ class Character:
         combat_result=final_attack-final_defense
         
         if self.ha==0:
-            return("Valores incompletos\n Introduce el ataque")
+            return("ERROR\n\n Introduce el ataque")
         else:
             if combat_result > 0:        
                 life_result=calculate_damage(self, defender, combat_result)
-                return(f"""Dado del atacante: {(attack_dice)}
-                    \n Dado del defensor: {(defense_dice)}
-                    \n ATAQUE EXITOSO: \n Ganas de {(combat_result)}
-                    \n {(life_result)}""")
+                return(f"""\n ATAQUE EXITOSO: \n Ganas de {(combat_result)}
+                    \n {(life_result)}
+                    \n\n Dado del atacante: {(attack_dice)}
+                    \n Dado del defensor: {(defense_dice)}""")
             elif combat_result <= 0:
-                return(f"""Dado del atacante: {(attack_dice)}
-                    \n Dado del defensor: {(defense_dice)}
-                    \n ATAQUE FALLIDO: \n Pierdes de {(abs(combat_result))}""")
+                return(f"""ATAQUE FALLIDO: \n Pierdes de {(abs(combat_result))}
+                    \n\n Dado del atacante: {(attack_dice)}
+                    \n Dado del defensor: {(defense_dice)}""")
 
     def defend(self, attacker):
         attack_dice=dice.roll(100)
@@ -79,18 +79,18 @@ class Character:
         combat_result=final_attack-final_defense
 
         if self.hd==0:
-            return("Valores incompletos\n Introduce la defensa")
+            return("ERROR\n\n Introduce la defensa")
         else:
             if combat_result > 0:        
                 life_result=calculate_damage(attacker, self, combat_result)
-                return(f"""Dado del atacante: {(attack_dice)}
-                    \n Dado del defensor: {(defense_dice)}
-                    \n DEFENSA FALLIDA: \n Pierdes de {(combat_result)}
-                    \n {(life_result)}""")
+                return(f"""DEFENSA FALLIDA: \n Pierdes de {(combat_result)}
+                    \n {(life_result)}
+                    \n\n Dado del atacante: {(attack_dice)}
+                    \n Dado del defensor: {(defense_dice)}""")
             elif combat_result <= 0:
-                return(f"""Dado del atacante: {(attack_dice)}
-                    \n Dado del defensor: {(defense_dice)}
-                    \n DEFENSA EXITOSA: \n Ganas de {(abs(combat_result))}""")
+                return(f"""\n DEFENSA EXITOSA: \n Ganas de {(abs(combat_result))}
+                    \n\n Dado del atacante: {(attack_dice)}
+                    \n Dado del defensor: {(defense_dice)}""")
 
 
 # Personajes a utilizar en la calculadora de combate
@@ -106,15 +106,11 @@ pj_2=Character(0, 0, 0, 0, 0, 0, 0, 0, 0)
 
 # HACER UNA FUNCIÓN QUE LLAME AL OBJETO CON SU ACCIÓN. FIN Y PSARLO AL COMANDO 
 
-
-# EN CALCULAR DAÑO, ¿ESTÁ BIEN CUANDO CALCULO LA armor FINAL EL CAMBIARLE EL NOMBRE? 
-# ¿DEBERÍA SEGUIR LLAMANDOLO defender.armor? no sé si es mejor arrastrarlo o usar otra variable
-
 # ¿ESTÁ BIEN EL CÓMO LE PASO EL RESTULADO DE COMBATE DE attack()?
 
-# (esto no es 100% necesario) ¿Cómo hago para que se redondee el resultado de habilidad final en grupos de 10? es decir: 90, 100, 110, etc. 
+# (esto no es 100% necesario) ¿Cómo hago para redondear el resultado de habilidad final en grupos de 10? es decir: 90, 100, 110, etc. 
 
-# FILTRAR ERRORES
+# FILTRAR ERRORES !!
 
 # añadir dropmenu para la calidad del arma 
 
