@@ -1,6 +1,7 @@
 from tkinter import Frame, Label, Button
+from tkinter.ttk import Separator
 from PIL import Image, ImageTk
-import view.dice_window, view.calculator_window, view.character_window
+import view.dice_window, view.calculator_window, view.character_window, view.history_window
 
 class app:
     def __init__(self, root):
@@ -22,7 +23,7 @@ class app:
         menu_root = Frame(self, bg="#3290F1")
         menu_root.grid(row=0, column=0, sticky="ns")
 
-        # Menu buttons
+        # Menu buttons ------------------------------
         btn_create = Button(
             menu_root,
             text="Nueva Ficha",
@@ -58,3 +59,21 @@ class app:
             command=view.dice_window.open,
         )
         btn_dice.grid(row=2, column=0, sticky="ew", padx=20, pady=10)
+
+        btn_history = Button(
+            menu_root,
+            text="Historial",
+            cursor="fleur",
+            bg="black",
+            fg="white",
+            activeforeground="black",
+            activebackground="#BDBDBD",
+            command=view.history_window.open,
+        )
+        btn_history.grid(row=3, column=0, sticky="ew", padx=20, pady=10)
+        
+
+        separator = Separator(menu_root).grid(row=4, column=0, sticky='we')
+
+
+        # Character buttons ------------------------------

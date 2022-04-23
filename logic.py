@@ -93,10 +93,20 @@ class Character:
                     \n Dado del defensor: {(defense_dice)}""")
 
 
+
+    def initiative():
+        pass
+
+    def secondary():
+        pass
+
+    def resistance():
+        pass
+
+
 # Personajes a utilizar en la calculadora de combate
 pj_1=Character(0, 0, 0, 0, 0, 0, 0, 0, 0)
 pj_2=Character(0, 0, 0, 0, 0, 0, 0, 0, 0)
-
 
 
 

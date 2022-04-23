@@ -2,6 +2,8 @@ from tkinter import CENTER, NE, RIDGE, Toplevel, Frame, Label, Button, Entry, Te
 from tkinter.ttk import Separator
 from PIL import Image, ImageTk
 from tkinter import filedialog
+import view.history_window as history_window
+
 
 def open():
     topCard = Toplevel()
@@ -23,22 +25,30 @@ def open():
         page_1.pack_forget()
 
 
-    # Page change buttons
-    btn1 = Button(topCard, text="Página 2", command=change_page_2, cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD', width=5)
-    btn1.place(x=410, y=960)
+    # Page change buttons ------
+    btn1 = Button(topCard, text="Página 1", command=change_page_1, cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD', width=5)
+    btn1.place(x=30, y=960)
 
-    btn2 = Button(topCard, text="Página 1", command=change_page_1, cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD', width=5)
-    btn2.place(x=300, y=960)
+    btn2 = Button(topCard, text="Página 2", command=change_page_2, cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD', width=5)
+    btn2.place(x=110, y=960)
 
     # Info about the current page
     info_page_1 = Label(page_1, text='Atributos - pagina 1', bg='#3290F1')
-    info_page_1.place(x=90, y=970)
+    info_page_1.place(x=190, y=970)
     
     info_page_2 = Label(page_2, text='Transfondo - pagina 2', bg='#3290F1')
-    info_page_2.place(x=90, y=970)
+    info_page_2.place(x=190, y=970)
 
     # Default page
     change_page_1()
+
+    # Save file button ------
+    btn_save = Button(topCard, text="Guardar", cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD', width=5)
+    btn_save.place(x=440, y=960)
+
+    # Delete file button ----
+    btn_delete = Button(topCard, text="Eliminar", cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD', width=5)
+    btn_delete.place(x=520, y=960)
 
     # Character image
     def image():
@@ -470,7 +480,7 @@ def open():
     # Buttoms -------------------------------
     zone_buttoms = Frame(page_1, relief=RIDGE, bg='#3290F1', bd="5", height="60", width="575").place(x=15, y=880)
 
-    btn_initiative = Button(page_1, text="Turno", cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
+    btn_initiative = Button(page_1, command=lambda: history_window.open(), text="Turno", cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
     btn_initiative.place(x=32, y=895)
 
     btn_combat = Button(page_1, text="Combate", cursor="fleur", bg="black", fg="white", activeforeground="black", activebackground='#BDBDBD')
