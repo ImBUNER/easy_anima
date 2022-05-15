@@ -1,16 +1,11 @@
-from pickle import FRAME
-from tkinter import ANCHOR, END, EXTENDED, LEFT, RIGHT, VERTICAL, Y, Button, Entry, Listbox, Scrollbar, StringVar, Toplevel, Frame
+from tkinter import EXTENDED, LEFT, RIGHT, VERTICAL, Y, Button, Entry, Listbox, Scrollbar, StringVar, Toplevel, Frame
+import history_manager
 
 # When "counter" is True, allow to open the history
 global counter
 counter = True
 
-# Swap to "True" the counter
-def counter_on():
-    global counter
-    counter=True
-
-def open():
+def open_history_box():
     global counter
     if counter:
         topHistory = Toplevel()
@@ -35,7 +30,9 @@ def open():
             font=10,
             selectmode=EXTENDED,
             )
- 
+
+        history_manager.history_box = history_box
+        history_manager.llenar_historial()
 
         scroll.config(command=history_box.yview)
         scroll.pack(side=RIGHT, fill=Y)
@@ -43,25 +40,9 @@ def open():
         history_frame.pack(fill="both", expand=1)
         history_box.pack(fill="both", expand=1)  
 
-
-
-
-
         manual_item = StringVar()
         manual_entry = Entry(history_frame, textvariable=manual_item, width=29)
         manual_entry.pack(side=LEFT, fill=Y)
-
-        btn_close = Button(
-            history_frame,
-            text="Cerrar",
-            cursor="fleur",
-            bg="black",
-            fg="white",
-            activeforeground="black",
-            activebackground="#BDBDBD",
-            command=lambda:[topHistory.destroy(), counter_on()] 
-        )
-        btn_close.place(x=210, y=800)
 
 
         btn_clean = Button(
@@ -72,7 +53,9 @@ def open():
             fg="white",
             activeforeground="black",
             activebackground="#BDBDBD",
-            command=lambda:history_box.delete(0, END) 
+            command=lambda:history_manager.alterar_historial(
+                tipo_de_modificacion='clean',
+                )
         )
         btn_clean.place(x=200, y=850)
 
@@ -84,7 +67,9 @@ def open():
             fg="white",
             activeforeground="black",
             activebackground="#BDBDBD",
-            command=lambda:history_box.delete(ANCHOR)
+            command=lambda:history_manager.alterar_historial(
+                tipo_de_modificacion='delete',
+                )
         )
         btn_delete.place(x=200, y=900)
 
@@ -96,11 +81,17 @@ def open():
             fg="white",
             activeforeground="black",
             activebackground="#BDBDBD",
-            command=lambda: history_box.insert(0, manual_item.get())
+            command=lambda: history_manager.alterar_historial(
+                tipo_de_modificacion='add from bar',
+                manual_item=manual_item)
         )
         btn_add.pack(side=RIGHT)
 
-    
 
+        def al_cerrar_history():
+            global counter
+            counter=True
+            topHistory.destroy()
 
-
+        # Comando para activar una funcion al intentar cerrar la ventana de crear personaje
+        topHistory.protocol("WM_DELETE_WINDOW", al_cerrar_history)

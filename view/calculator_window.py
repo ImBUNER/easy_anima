@@ -1,6 +1,6 @@
 from tkinter import LEFT, RAISED, IntVar, Toplevel, Label, Entry, Button, Frame
 from PIL import Image, ImageTk
-import logic
+import calculator_manager
 
 def open():
     topCalc = Toplevel()
@@ -141,7 +141,7 @@ def open():
         bg="black", 
         fg="orange", 
         activebackground='#BDBDBD', 
-        command=lambda: combat(logic.pj_1, logic.pj_2, "attack")
+        command=lambda: combat(calculator_manager.pj_1, calculator_manager.pj_2, "attack")
         )
     btn_attack_1.place(x=460, y=75, width=80, height=30)
 
@@ -152,7 +152,7 @@ def open():
         bg="black", 
         fg="orange", 
         activebackground='#BDBDBD', 
-        command=lambda: combat(logic.pj_2, logic.pj_1, "defend")
+        command=lambda: combat(calculator_manager.pj_2, calculator_manager.pj_1, "defend")
         )
     btn_defense_1.place(x=460, y=125, width=80, height=30)
 
@@ -164,7 +164,7 @@ def open():
         bg="black", 
         fg="cyan", 
         activebackground='#BDBDBD', 
-        command=lambda: combat(logic.pj_2, logic.pj_1, "attack")
+        command=lambda: combat(calculator_manager.pj_2, calculator_manager.pj_1, "attack")
         )
     btn_attack_2.place(x=460, y=350, width=80, height=30)
 
@@ -175,7 +175,7 @@ def open():
         bg="black", 
         fg="cyan", 
         activebackground='#BDBDBD', 
-        command=lambda: combat(logic.pj_1, logic.pj_2, "defend")
+        command=lambda: combat(calculator_manager.pj_1, calculator_manager.pj_2, "defend")
         )
     btn_defense_2.place(x=460, y=400, width=80, height=30)
 
@@ -184,25 +184,25 @@ def open():
 
     # Collect input values
     def get_data():
-        logic.pj_1.ha=ha_1.get()
-        logic.pj_1.bonus_ha=bonus_ha_1.get()
-        logic.pj_1.penalizer_ha=penalizer_ha_1.get()
-        logic.pj_1.hd=hd_1.get()
-        logic.pj_1.bonus_hd=bonus_hd_1.get()
-        logic.pj_1.penalizer_hd=penalizer_hd_1.get()
-        logic.pj_1.armor=armor_1.get()
-        logic.pj_1.damage=damage_1.get()
-        logic.pj_1.quality=quality_1.get()
+        calculator_manager.pj_1.ha=ha_1.get()
+        calculator_manager.pj_1.bonus_ha=bonus_ha_1.get()
+        calculator_manager.pj_1.penalizer_ha=penalizer_ha_1.get()
+        calculator_manager.pj_1.hd=hd_1.get()
+        calculator_manager.pj_1.bonus_hd=bonus_hd_1.get()
+        calculator_manager.pj_1.penalizer_hd=penalizer_hd_1.get()
+        calculator_manager.pj_1.armor=armor_1.get()
+        calculator_manager.pj_1.damage=damage_1.get()
+        calculator_manager.pj_1.quality=quality_1.get()
 
-        logic.pj_2.ha=ha_2.get()
-        logic.pj_2.bonus_ha=bonus_ha_2.get()
-        logic.pj_2.penalizer_ha=penalizer_ha_2.get()
-        logic.pj_2.hd=hd_2.get()
-        logic.pj_2.bonus_hd=bonus_hd_2.get()
-        logic.pj_2.penalizer_hd=penalizer_hd_2.get()
-        logic.pj_2.armor=armor_2.get()
-        logic.pj_2.damage=damage_2.get()
-        logic.pj_2.quality=quality_2.get()
+        calculator_manager.pj_2.ha=ha_2.get()
+        calculator_manager.pj_2.bonus_ha=bonus_ha_2.get()
+        calculator_manager.pj_2.penalizer_ha=penalizer_ha_2.get()
+        calculator_manager.pj_2.hd=hd_2.get()
+        calculator_manager.pj_2.bonus_hd=bonus_hd_2.get()
+        calculator_manager.pj_2.penalizer_hd=penalizer_hd_2.get()
+        calculator_manager.pj_2.armor=armor_2.get()
+        calculator_manager.pj_2.damage=damage_2.get()
+        calculator_manager.pj_2.quality=quality_2.get()
 
     # Function used in buttons to get datas, call logic actions and print the result
     def combat(attacker, defender, action):
@@ -212,27 +212,3 @@ def open():
         elif action == "defend":
             result = defender.defend(attacker)
         result_label.config(text=result)
-
-
-
-
-
-
-
-
-
-    # Hacer que la calidad se elija mediante menú de opciones
-    # ¿CÓMO ACCEDER A EL VALOR ELEGIDO PARA USARLO?
-    # quality = [
-    #     "-15",
-    #     "-10",
-    #     "-5",
-    #     "0",
-    #     "+5",
-    #     "+10",
-    #     "+15"
-    # ]
-    # clicked = StringVar()
-    # clicked.set(quality[3])
-    # menu_quality = OptionMenu(topCalc, clicked, *quality)
-    # menu_quality.place(x=390, y=155, width=60, height=30)

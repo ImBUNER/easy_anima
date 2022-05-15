@@ -1,5 +1,5 @@
 from tkinter import Toplevel, Label, Button
-import dice
+import dice_manager
 
 def open():
     topDice = Toplevel()
@@ -10,7 +10,7 @@ def open():
 
     # Function that places the dice in the label
     def place_dice(side):
-        dice_result = dice.roll(side)
+        dice_result = dice_manager.roll(side)
         label.configure(text = dice_result)
         label.pack()
 
